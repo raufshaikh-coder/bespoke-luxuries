@@ -52,18 +52,18 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center animate-slide-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px w-16 bg-gradient-gold" />
-              <p className="text-gold uppercase tracking-[0.4em] text-xs font-semibold">
+              <p className="text-gold uppercase tracking-[0.4em] text-xs font-semibold drop-shadow-md">
                 From Dubai to the World
               </p>
               <div className="h-px w-16 bg-gradient-gold" />
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.02] mb-8">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] mb-8 drop-shadow-lg">
               <span className="text-gradient-gold">Lusso Sphere</span>
             </h1>
-            <p className="font-display text-2xl md:text-3xl text-foreground/80 italic mb-10">
+            <p className="font-display text-2xl md:text-3xl text-foreground italic mb-10 drop-shadow-md">
               Luxuries that Whisper Exclusivity.
             </p>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed">
+            <p className="text-foreground/90 text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed drop-shadow-sm">
               Curating the world's most coveted luxury pieces—sourced from Dubai's finest 
               boutiques and delivered globally with absolute authenticity.
             </p>

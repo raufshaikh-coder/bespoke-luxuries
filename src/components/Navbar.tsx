@@ -25,9 +25,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             {/* Primary logo for larger screens */}
-            <img src={logoPrimary} alt="Lusso Sphere" className="h-10 w-auto hidden sm:block" />
+            <img src={logoPrimary} alt="Lusso Sphere" className="h-14 md:h-16 w-auto hidden sm:block" />
             {/* Secondary logo (icon) for mobile */}
-            <img src={logoSecondary} alt="Lusso Sphere" className="h-12 w-auto sm:hidden" />
+            <img src={logoSecondary} alt="Lusso Sphere" className="h-14 w-auto sm:hidden" />
           </Link>
 
           {/* Desktop Navigation */}
