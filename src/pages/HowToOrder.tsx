@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Search, Shield, Package, CheckCircle, Sparkles } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CTAPopup from "@/components/CTAPopup";
 
 const steps = [
   {
@@ -126,7 +126,7 @@ const HowToOrder = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center group">
+              <div key={index} className="luxury-card p-8 text-center group rounded-sm">
                 <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center border border-gold/30 group-hover:border-gold/60 group-hover:shadow-gold transition-all duration-500">
                   <benefit.icon className="w-7 h-7 text-gold" />
                 </div>
@@ -147,12 +147,14 @@ const HowToOrder = () => {
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
             Submit your request today and experience the Lusso Sphere difference.
           </p>
-          <Button variant="hero" asChild>
-            <Link to="/contact">
-              Get Your Deal Done
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
+          <CTAPopup
+            trigger={
+              <Button variant="hero">
+                Get Your Deal Done
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            }
+          />
         </div>
       </section>
 
