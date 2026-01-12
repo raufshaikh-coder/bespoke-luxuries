@@ -6,66 +6,70 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 45 20% 95%;
+    --background: 220 15% 5%;
+    --foreground: 40 30% 96%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 45 20% 95%;
+    --card: 220 12% 8%;
+    --card-foreground: 40 30% 96%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 45 20% 95%;
+    --popover: 220 12% 8%;
+    --popover-foreground: 40 30% 96%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 220 15% 5%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 45 20% 95%;
+    --secondary: 220 10% 12%;
+    --secondary-foreground: 40 30% 96%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 45 10% 55%;
+    --muted: 220 10% 15%;
+    --muted-foreground: 40 15% 60%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 3%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 15% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 43 74% 49%;
+    --border: 38 30% 20%;
+    --input: 220 10% 15%;
+    --ring: 38 92% 50%;
 
-    --radius: 0.125rem;
+    --radius: 0.25rem;
 
-    /* Custom luxury tokens */
-    --gold: 43 74% 49%;
-    --gold-light: 43 60% 60%;
-    --gold-dark: 43 80% 35%;
-    --cream: 45 20% 95%;
-    --cream-dark: 45 15% 88%;
-    --black: 0 0% 3%;
-    --charcoal: 0 0% 8%;
-    --charcoal-light: 0 0% 12%;
+    /* Rich luxury tokens */
+    --gold: 38 92% 50%;
+    --gold-light: 43 85% 65%;
+    --gold-dark: 35 90% 40%;
+    --gold-glow: 38 100% 55%;
+    --cream: 40 30% 96%;
+    --cream-dark: 40 20% 90%;
+    --black: 220 15% 5%;
+    --charcoal: 220 12% 10%;
+    --charcoal-light: 220 10% 15%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 60% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 3%), hsl(0 0% 6%));
+    --gradient-gold: linear-gradient(135deg, hsl(35 90% 40%), hsl(38 92% 50%), hsl(43 85% 65%));
+    --gradient-gold-shimmer: linear-gradient(90deg, hsl(35 90% 40%), hsl(43 85% 65%), hsl(35 90% 40%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 15% 5%), hsl(220 12% 10%));
+    --gradient-radial: radial-gradient(ellipse at center, hsl(38 92% 50% / 0.15), transparent 70%);
 
-    /* Shadows */
-    --shadow-gold: 0 4px 30px -5px hsl(43 74% 49% / 0.25);
-    --shadow-elegant: 0 20px 50px -15px hsl(0 0% 0% / 0.6);
+    /* Rich Shadows */
+    --shadow-gold: 0 8px 40px -8px hsl(38 92% 50% / 0.4);
+    --shadow-gold-intense: 0 12px 50px -10px hsl(38 92% 50% / 0.5), 0 0 30px -5px hsl(38 92% 50% / 0.3);
+    --shadow-elegant: 0 25px 60px -15px hsl(0 0% 0% / 0.7);
 
     /* Typography */
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 240 6% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 38 92% 50%;
   }
 }
 
@@ -104,20 +108,43 @@
     box-shadow: var(--shadow-gold);
   }
 
+  .shadow-gold-intense {
+    box-shadow: var(--shadow-gold-intense);
+  }
+
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
 
+  .glow-gold {
+    filter: drop-shadow(0 0 20px hsl(38 92% 50% / 0.5));
+  }
+
   .luxury-card {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--charcoal)));
+    border: 1px solid hsl(var(--border) / 0.5);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .luxury-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-radial);
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
 
   .luxury-card:hover {
-    border-color: hsl(var(--gold) / 0.4);
-    box-shadow: var(--shadow-gold);
-    transform: translateY(-4px);
+    border-color: hsl(var(--gold) / 0.6);
+    box-shadow: var(--shadow-gold-intense);
+    transform: translateY(-8px);
+  }
+
+  .luxury-card:hover::before {
+    opacity: 1;
   }
 
   .gold-underline {
@@ -128,10 +155,17 @@
     content: '';
     position: absolute;
     bottom: -8px;
-    left: 0;
-    width: 50px;
-    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
     background: var(--gradient-gold);
+    border-radius: 2px;
+  }
+
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
   }
 
   .animate-fade-in {
@@ -146,6 +180,10 @@
     animation: scaleIn 0.6s ease-out forwards;
   }
 
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
   .image-overlay {
     position: relative;
   }
@@ -154,7 +192,22 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, hsl(0 0% 3%) 0%, transparent 60%);
+    background: linear-gradient(to top, hsl(220 15% 5%) 0%, transparent 60%);
+  }
+
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
   }
 }
 
@@ -198,13 +251,35 @@
   }
 }
 
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(38 92% 50% / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(38 92% 50% / 0.5);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .shimmer {
   background: linear-gradient(
     90deg,
     hsl(var(--gold) / 0) 0%,
-    hsl(var(--gold) / 0.3) 50%,
+    hsl(var(--gold) / 0.4) 50%,
     hsl(var(--gold) / 0) 100%
   );
   background-size: 200% 100%;
-  animation: shimmer 3s infinite;
+  animation: shimmer 2.5s infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
