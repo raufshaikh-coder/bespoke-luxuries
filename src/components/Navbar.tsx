@@ -2,7 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import CTAPopup from "@/components/CTAPopup";
+import logoPrimary from "@/assets/logo-primary.png";
+import logoSecondary from "@/assets/logo-secondary.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -22,7 +24,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Lusso Sphere" className="h-12 w-auto" />
+            {/* Primary logo for larger screens */}
+            <img src={logoPrimary} alt="Lusso Sphere" className="h-10 w-auto hidden sm:block" />
+            {/* Secondary logo (icon) for mobile */}
+            <img src={logoSecondary} alt="Lusso Sphere" className="h-12 w-auto sm:hidden" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,9 +49,13 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="luxury" size="sm" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+            <CTAPopup
+              trigger={
+                <Button variant="luxury" size="sm">
+                  Contact Us
+                </Button>
+              }
+            />
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -76,11 +85,13 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button variant="luxury" size="sm" asChild className="mt-4">
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  Contact Us
-                </Link>
-              </Button>
+              <CTAPopup
+                trigger={
+                  <Button variant="luxury" size="sm" className="mt-4">
+                    Contact Us
+                  </Button>
+                }
+              />
             </div>
           </div>
         )}

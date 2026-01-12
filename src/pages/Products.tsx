@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Watch, Gem, ShoppingBag, Crown, Sparkles } from "lucide-react";
 import watchesImage from "@/assets/watches-showcase.jpg";
 import bagImage from "@/assets/luxury-bag.jpg";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CTAPopup from "@/components/CTAPopup";
 
 const categories = [
   {
@@ -95,12 +95,14 @@ const Products = () => {
                       </span>
                     ))}
                   </div>
-                  <Button variant="luxuryOutline" asChild>
-                    <Link to="/contact" className="group">
-                      Request Item
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
+                  <CTAPopup
+                    trigger={
+                      <Button variant="luxuryOutline" className="group">
+                        Request Item
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    }
+                  />
                 </div>
               </div>
             ))}
@@ -139,12 +141,14 @@ const Products = () => {
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
             Our global network can source virtually any luxury item. Share your wishlist and let us do the rest.
           </p>
-          <Button variant="hero" asChild>
-            <Link to="/contact">
-              Get Your Deal Done
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
+          <CTAPopup
+            trigger={
+              <Button variant="hero">
+                Get Your Deal Done
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            }
+          />
         </div>
       </section>
 

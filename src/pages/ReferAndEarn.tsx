@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Gift, DollarSign, Share2, CheckCircle, Sparkles } from "lucide-react";
+import CTAPopup from "@/components/CTAPopup";
 
 const howItWorks = [
   {
@@ -58,7 +58,7 @@ const ReferAndEarn = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How It Works - Fixed alignment with luxury cards */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -66,7 +66,7 @@ const ReferAndEarn = () => {
               How It Works
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {howItWorks.map((step, index) => (
               <div key={index} className="luxury-card p-10 text-center rounded-sm group relative">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-gold flex items-center justify-center text-white font-bold text-sm">
@@ -111,12 +111,14 @@ const ReferAndEarn = () => {
                 <p className="text-muted-foreground mb-8">
                   Contact us to get your unique referral code and start sharing the luxury experience.
                 </p>
-                <Button variant="luxury" asChild>
-                  <Link to="/contact">
-                    Get Your Referral Code
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
+                <CTAPopup
+                  trigger={
+                    <Button variant="luxury">
+                      Get Your Referral Code
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  }
+                />
               </div>
             </div>
           </div>
@@ -135,12 +137,14 @@ const ReferAndEarn = () => {
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
             Our team is here to help you understand the program and maximize your rewards.
           </p>
-          <Button variant="heroOutline" asChild>
-            <Link to="/contact">
-              Contact Us
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
+          <CTAPopup
+            trigger={
+              <Button variant="heroOutline">
+                Contact Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            }
+          />
         </div>
       </section>
 

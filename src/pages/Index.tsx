@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, Search, Truck, Award, ArrowRight, Sparkles, Crown, Gem } from "lucide-react";
-import heroImage from "@/assets/hero-luxury.jpg";
 import watchesImage from "@/assets/watches-showcase.jpg";
 import bagImage from "@/assets/luxury-bag.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HeroSlider from "@/components/HeroSlider";
+import CTAPopup from "@/components/CTAPopup";
 
 const services = [
   {
@@ -41,20 +42,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with Slider */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Luxury products"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/80" />
-          {/* Subtle gold accent glow */}
-          <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-gold/8 rounded-full blur-[150px]" />
-        </div>
+        {/* Background Slider */}
+        <HeroSlider />
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 pt-24">
@@ -77,12 +68,14 @@ const Index = () => {
               boutiques and delivered globally with absolute authenticity.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Button variant="hero" size="lg" asChild className="group">
-                <Link to="/contact">
-                  Get Your Deal Done
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+              <CTAPopup
+                trigger={
+                  <Button variant="hero" size="lg" className="group">
+                    Get Your Deal Done
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                }
+              />
               <Button variant="heroOutline" size="lg" asChild>
                 <Link to="/products">Explore Products</Link>
               </Button>
@@ -265,14 +258,14 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { step: "01", title: "Submit Request", desc: "Tell us what luxury item you're seeking" },
               { step: "02", title: "We Source It", desc: "Our network locates and authenticates your item" },
               { step: "03", title: "Secure Delivery", desc: "Receive your piece with white-glove service" },
             ].map((item, index) => (
-              <div key={index} className="relative text-center group">
-                <span className="font-display text-8xl font-bold text-gradient-gold opacity-20 block mb-4 group-hover:opacity-30 transition-opacity duration-500">
+              <div key={index} className="luxury-card p-8 text-center group rounded-sm">
+                <span className="font-display text-6xl font-bold text-gradient-gold opacity-30 block mb-4 group-hover:opacity-50 transition-opacity duration-500">
                   {item.step}
                 </span>
                 <h3 className="font-display text-xl text-foreground mb-4">
@@ -299,12 +292,14 @@ const Index = () => {
             Submit your request today and let our team of experts find the 
             perfect luxury piece for you.
           </p>
-          <Button variant="hero" size="lg" asChild className="group">
-            <Link to="/contact">
-              Get Your Deal Done
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+          <CTAPopup
+            trigger={
+              <Button variant="hero" size="lg" className="group">
+                Get Your Deal Done
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            }
+          />
         </div>
       </section>
 
