@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-charcoal border-t border-border">
+    <footer className="bg-cream-dark border-t border-gold/20">
       <div className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -12,10 +12,12 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-6">
               <img src={logo} alt="Lusso Sphere" className="h-16 w-auto" />
             </Link>
+            <p className="text-gold italic font-display text-lg mb-4">
+              Luxuries that Whisper Exclusivity.
+            </p>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              Your trusted partner in acquiring the world's most exclusive luxury 
-              items. We source authenticated, rare pieces from prestigious brands 
-              for discerning clients worldwide.
+              Curating the world's most coveted luxury pieces—sourced from Dubai 
+              and delivered globally with absolute authenticity.
             </p>
           </div>
 
@@ -25,16 +27,31 @@ const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-4">
-              {["Home", "About", "Services", "Brands", "Contact"].map((link) => (
-                <li key={link}>
-                  <Link
-                    to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                    className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/" className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/products" className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm">
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-to-order" className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm">
+                  How to Order
+                </Link>
+              </li>
+              <li>
+                <Link to="/refer-and-earn" className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm">
+                  Refer & Earn
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -50,33 +67,27 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone size={16} className="text-gold" />
-                <span>+1 (555) 123-4567</span>
+                <span>+971 XX XXX XXXX</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin size={16} className="text-gold mt-0.5" />
-                <span>123 Luxury Lane, Beverly Hills, CA 90210</span>
+                <span>Dubai, UAE</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-16 pt-8 border-t border-gold/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
             © 2026 Lusso Sphere. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link
-              to="/privacy"
+              to="/contact"
               className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm"
             >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm"
-            >
-              Terms of Service
+              Contact Us
             </Link>
           </div>
         </div>
