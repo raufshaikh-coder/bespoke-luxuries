@@ -144,14 +144,14 @@ const CTAPopup = ({ trigger }: CTAPopupProps) => {
                     </div>
                     <div>
                       <label className="block text-xs text-muted-foreground mb-2">
-                        Phone
+                        Phone / WhatsApp
                       </label>
                       <Input
                         variant="luxury"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+971 54 355 4482"
                         className="h-10 text-sm"
                       />
                     </div>
