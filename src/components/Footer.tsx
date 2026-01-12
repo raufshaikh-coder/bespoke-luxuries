@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,13 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <span className="font-display text-2xl font-bold text-gradient-gold">
-                LUXE
-              </span>
-              <span className="font-display text-2xl font-light text-foreground">
-                CONCIERGE
-              </span>
+            <Link to="/" className="inline-block mb-6">
+              <img src={logo} alt="Lusso Sphere" className="h-16 w-auto" />
             </Link>
             <p className="text-muted-foreground leading-relaxed max-w-md">
               Your trusted partner in acquiring the world's most exclusive luxury 
@@ -50,7 +46,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Mail size={16} className="text-gold" />
-                <span>info@luxeconcierge.com</span>
+                <span>info@lussosphere.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone size={16} className="text-gold" />
@@ -67,7 +63,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2026 Luxe Concierge. All rights reserved.
+            © 2026 Lusso Sphere. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link

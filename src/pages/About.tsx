@@ -42,7 +42,7 @@ const About = () => {
               The Art of <span className="text-gradient-gold">Luxury</span> Procurement
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              For over 15 years, Luxe Concierge has been the trusted partner for 
+              For over 15 years, Lusso Sphere has been the trusted partner for 
               discerning clients seeking the world's most exclusive luxury items.
             </p>
           </div>
@@ -58,8 +58,8 @@ const About = () => {
                 Our Story
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                  Founded in 2010, Luxe Concierge emerged from a simple observation: 
+              <p>
+                  Founded in 2010, Lusso Sphere emerged from a simple observation: 
                   acquiring truly exclusive luxury items shouldn't require endless 
                   waitlists, uncertain authenticity, or compromised service.
                 </p>
@@ -130,7 +130,7 @@ const About = () => {
               experiences and fulfill dreams."
             </p>
             <footer className="text-gold tracking-widest uppercase text-sm">
-              — The Luxe Concierge Team
+              — The Lusso Sphere Team
             </footer>
           </blockquote>
         </div>
