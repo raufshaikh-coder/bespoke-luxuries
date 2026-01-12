@@ -24,7 +24,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to a backend
     setIsSubmitted(true);
     toast.success("Your request has been submitted successfully!");
   };
@@ -36,13 +35,13 @@ const Contact = () => {
         <section className="pt-32 pb-20 min-h-[80vh] flex items-center">
           <div className="container mx-auto px-6">
             <div className="max-w-xl mx-auto text-center">
-              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-gold/10 flex items-center justify-center">
-                <CheckCircle className="w-10 h-10 text-gold" />
+              <div className="w-16 h-16 mx-auto mb-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <CheckCircle className="w-8 h-8 text-primary" />
               </div>
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-8">
                 Request Received
               </h1>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 Thank you for your inquiry. Our team will review your request 
                 and contact you within 24-48 hours.
               </p>
@@ -68,11 +67,11 @@ const Contact = () => {
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-gold uppercase tracking-[0.3em] text-sm mb-6">
+            <p className="text-primary uppercase tracking-[0.3em] text-sm mb-8 font-medium">
               Contact Us
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-8">
-              Let's Find Your <span className="text-gradient-gold">Dream Piece</span>
+            <h1 className="font-display text-5xl md:text-6xl font-semibold text-foreground mb-10 leading-tight">
+              Let's Find Your <span className="text-primary">Dream Piece</span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Fill out the form below with your requirements and our team 
@@ -85,34 +84,34 @@ const Contact = () => {
       {/* Form Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {/* Contact Info */}
             <div className="lg:col-span-1">
-              <h2 className="font-display text-2xl text-foreground mb-8">
+              <h2 className="font-display text-2xl text-foreground mb-10 tracking-wide">
                 Get in Touch
               </h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-gold" />
+              <div className="space-y-8">
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-foreground font-medium mb-1">Email</p>
                     <p className="text-muted-foreground">info@luxeconcierge.com</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-gold" />
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-foreground font-medium mb-1">Phone</p>
                     <p className="text-muted-foreground">+1 (555) 123-4567</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-gold" />
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-foreground font-medium mb-1">Office</p>
@@ -124,8 +123,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-12 p-6 luxury-card rounded-lg">
-                <p className="text-gold text-sm uppercase tracking-wider mb-2">
+              <div className="mt-14 p-8 luxury-card">
+                <p className="text-primary text-sm uppercase tracking-[0.15em] mb-2">
                   Response Time
                 </p>
                 <p className="font-display text-2xl text-foreground">
@@ -136,14 +135,14 @@ const Contact = () => {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="luxury-card rounded-lg p-8 md:p-10">
-                <h3 className="font-display text-2xl text-foreground mb-8">
+              <form onSubmit={handleSubmit} className="luxury-card p-10 md:p-12">
+                <h3 className="font-display text-2xl text-foreground mb-10 tracking-wide">
                   Product Request Form
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
+                    <label className="block text-sm text-muted-foreground mb-3">
                       Full Name *
                     </label>
                     <Input
@@ -156,7 +155,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
+                    <label className="block text-sm text-muted-foreground mb-3">
                       Email Address *
                     </label>
                     <Input
@@ -170,7 +169,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
+                    <label className="block text-sm text-muted-foreground mb-3">
                       Phone Number
                     </label>
                     <Input
@@ -182,7 +181,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
+                    <label className="block text-sm text-muted-foreground mb-3">
                       Brand *
                     </label>
                     <Input
@@ -195,7 +194,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
+                    <label className="block text-sm text-muted-foreground mb-3">
                       Product / Model *
                     </label>
                     <Input
@@ -208,14 +207,14 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
+                    <label className="block text-sm text-muted-foreground mb-3">
                       Budget Range
                     </label>
                     <select
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="flex w-full rounded-md border border-border bg-charcoal px-4 py-3 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300"
+                      className="flex w-full h-12 rounded-sm border border-border bg-card px-4 py-3 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                     >
                       <option value="">Select budget range</option>
                       <option value="5k-10k">$5,000 - $10,000</option>
@@ -227,8 +226,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="mb-8">
-                  <label className="block text-sm text-muted-foreground mb-2">
+                <div className="mb-10">
+                  <label className="block text-sm text-muted-foreground mb-3">
                     Additional Details
                   </label>
                   <textarea
@@ -236,7 +235,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="flex w-full rounded-md border border-border bg-charcoal px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300 resize-none"
+                    className="flex w-full rounded-sm border border-border bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-none"
                     placeholder="Describe any specific requirements: color, size, condition (new/pre-owned), timeframe, etc."
                   />
                 </div>
