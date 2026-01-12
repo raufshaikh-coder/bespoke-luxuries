@@ -242,7 +242,7 @@ const Contact = () => {
 
                 <Button type="submit" variant="hero" className="w-full md:w-auto">
                   <Send className="w-4 h-4 mr-2" />
-                  Submit Request
+                  Get Your Deal Done
                 </Button>
               </form>
             </div>
