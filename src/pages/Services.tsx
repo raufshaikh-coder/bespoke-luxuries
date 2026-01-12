@@ -44,14 +44,14 @@ const Services = () => {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20">
+      <section className="pt-32 pb-24">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-gold uppercase tracking-[0.3em] text-sm mb-6">
+            <p className="text-primary uppercase tracking-[0.3em] text-sm mb-8 font-medium">
               Our Services
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-8">
-              Tailored <span className="text-gradient-gold">Luxury</span> Solutions
+            <h1 className="font-display text-5xl md:text-6xl font-semibold text-foreground mb-10 leading-tight">
+              Tailored <span className="text-primary">Luxury</span> Solutions
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               From sourcing rare timepieces to authenticating exclusive fashion, 
@@ -64,35 +64,35 @@ const Services = () => {
       {/* Main Services */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="space-y-16">
+          <div className="space-y-24">
             {mainServices.map((service, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="w-16 h-16 mb-6 rounded-full bg-gold/10 flex items-center justify-center">
-                    <service.icon className="w-8 h-8 text-gold" />
+                  <div className="w-14 h-14 mb-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+                  <h2 className="font-display text-3xl font-semibold text-foreground mb-6">
                     {service.title}
                   </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-muted-foreground leading-relaxed mb-8">
                     {service.description}
                   </p>
-                  <ul className="grid grid-cols-2 gap-3">
+                  <ul className="grid grid-cols-2 gap-4">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle className="w-4 h-4 text-gold" />
+                      <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className={`luxury-card rounded-lg aspect-[4/3] flex items-center justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <service.icon className="w-24 h-24 text-gold/30" />
+                <div className={`luxury-card aspect-[4/3] flex items-center justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                  <service.icon className="w-20 h-20 text-primary/20" />
                 </div>
               </div>
             ))}
@@ -101,18 +101,18 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-charcoal border-y border-border">
+      <section className="py-24 bg-card border-y border-border">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl font-bold text-foreground">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl font-semibold text-foreground">
               Additional Benefits
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {additionalServices.map((service, index) => (
               <div key={index} className="text-center p-6">
-                <service.icon className="w-10 h-10 text-gold mx-auto mb-4" />
-                <h3 className="font-display text-lg text-foreground mb-2">{service.title}</h3>
+                <service.icon className="w-8 h-8 text-primary mx-auto mb-5" />
+                <h3 className="font-display text-lg text-foreground mb-2 tracking-wide">{service.title}</h3>
                 <p className="text-muted-foreground text-sm">{service.desc}</p>
               </div>
             ))}
@@ -121,12 +121,12 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
+      <section className="py-28">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-4xl font-semibold text-foreground mb-6">
             Ready to Experience Our Services?
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-10">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-12">
             Tell us what you're looking for and let us handle the rest.
           </p>
           <Button variant="hero" asChild>
