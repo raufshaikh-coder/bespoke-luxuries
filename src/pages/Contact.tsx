@@ -97,7 +97,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-foreground font-medium mb-1">Email</p>
-                    <p className="text-muted-foreground">info@lussosphere.com</p>
+                    <a href="mailto:enquiry@lussosphere.com" className="text-muted-foreground hover:text-gold transition-colors">enquiry@lussosphere.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-5">
@@ -105,8 +105,8 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <p className="text-foreground font-medium mb-1">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-foreground font-medium mb-1">Phone / WhatsApp</p>
+                    <a href="https://wa.me/971543554482" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold transition-colors">+971 54 355 4482</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-5">
@@ -115,10 +115,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-foreground font-medium mb-1">Office</p>
-                    <p className="text-muted-foreground">
-                      123 Luxury Lane<br />
-                      Beverly Hills, CA 90210
-                    </p>
+                    <p className="text-muted-foreground">Dubai - India</p>
                   </div>
                 </div>
               </div>

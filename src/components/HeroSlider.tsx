@@ -63,12 +63,12 @@ const HeroSlider = () => {
         </div>
       </div>
 
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/70" />
+      {/* Overlay gradient - lighter for better image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
 
       {/* Subtle gold accent glow */}
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-gold/8 rounded-full blur-[150px]" />
+      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[150px]" />
 
       {/* Slide indicators */}
       <div className="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-3 z-20">
