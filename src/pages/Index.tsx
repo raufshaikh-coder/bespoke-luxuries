@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, Search, Truck, Award, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-luxury.jpg";
+import heroImage from "@/assets/luxury-items.jpg";
+import watchesImage from "@/assets/watches-showcase.jpg";
+import bagImage from "@/assets/luxury-bag.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -46,26 +48,27 @@ const Index = () => {
           <img
             src={heroImage}
             alt="Luxury products"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 pt-24 text-center">
-          <div className="animate-slide-up">
-            <p className="text-primary uppercase tracking-[0.3em] text-sm mb-8 font-medium">
+        <div className="relative z-10 container mx-auto px-6 pt-24">
+          <div className="max-w-2xl animate-slide-up">
+            <p className="text-gold uppercase tracking-[0.3em] text-sm mb-8 font-medium">
               Exclusive Luxury Concierge
             </p>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-foreground leading-[1.1] mb-10">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.05] mb-10">
               Acquire the <br />
-              <span className="text-primary">Extraordinary</span>
+              <span className="text-gradient-gold">Extraordinary</span>
             </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed font-light">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mb-12 leading-relaxed">
               Your personal gateway to the world's most coveted luxury items. 
               From rare timepieces to exclusive fashion, we source what others cannot.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" asChild>
                 <Link to="/contact">Submit Request</Link>
               </Button>
@@ -78,19 +81,19 @@ const Index = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-          <div className="w-5 h-9 rounded-full border border-primary/30 flex items-start justify-center p-2">
-            <div className="w-0.5 h-2 bg-primary/50 rounded-full animate-bounce" />
+          <div className="w-6 h-10 rounded-full border-2 border-gold/40 flex items-start justify-center p-2">
+            <div className="w-1 h-2 bg-gold rounded-full animate-bounce" />
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-card border-y border-border">
+      <section className="py-20 bg-charcoal border-y border-border">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="font-display text-4xl md:text-5xl font-semibold text-primary mb-2">
+                <p className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
                   {stat.number}
                 </p>
                 <p className="text-muted-foreground text-sm uppercase tracking-[0.15em]">
@@ -102,14 +105,55 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* Featured Categories */}
       <section className="py-28">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <p className="text-primary uppercase tracking-[0.2em] text-sm mb-5 font-medium">
+            <p className="text-gold uppercase tracking-[0.2em] text-sm mb-5 font-medium">
+              What We Source
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Curated Categories
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative group overflow-hidden luxury-card">
+              <img 
+                src={watchesImage} 
+                alt="Luxury Watches" 
+                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <h3 className="font-display text-2xl text-foreground mb-2">Timepieces</h3>
+                <p className="text-muted-foreground">Rolex, Patek Philippe, Audemars Piguet & more</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden luxury-card">
+              <img 
+                src={bagImage} 
+                alt="Luxury Bags" 
+                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <h3 className="font-display text-2xl text-foreground mb-2">Fashion & Accessories</h3>
+                <p className="text-muted-foreground">Hermès, Chanel, Louis Vuitton & more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-28 bg-charcoal border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <p className="text-gold uppercase tracking-[0.2em] text-sm mb-5 font-medium">
               What We Offer
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               Our Services
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -121,10 +165,10 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="luxury-card p-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 mx-auto mb-8 rounded-full bg-gold/10 flex items-center justify-center">
+                  <service.icon className="w-7 h-7 text-gold" />
                 </div>
-                <h3 className="font-display text-xl text-foreground mb-4 tracking-wide">
+                <h3 className="font-display text-xl text-foreground mb-4">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -146,16 +190,16 @@ const Index = () => {
       </section>
 
       {/* Brands Marquee */}
-      <section className="py-20 bg-card border-y border-border">
+      <section className="py-20">
         <div className="container mx-auto px-6">
-          <p className="text-center text-primary uppercase tracking-[0.2em] text-sm mb-14 font-medium">
+          <p className="text-center text-gold uppercase tracking-[0.2em] text-sm mb-14 font-medium">
             Trusted Brand Partners
           </p>
           <div className="flex flex-wrap justify-center gap-10 md:gap-16">
             {brands.map((brand, index) => (
               <span
                 key={index}
-                className="font-display text-2xl md:text-3xl text-muted-foreground/60 hover:text-foreground transition-colors duration-300 cursor-default tracking-wide"
+                className="font-display text-2xl md:text-3xl text-muted-foreground hover:text-gold transition-colors duration-300 cursor-default"
               >
                 {brand}
               </span>
@@ -165,13 +209,13 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-28">
+      <section className="py-28 bg-charcoal border-y border-border">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <p className="text-primary uppercase tracking-[0.2em] text-sm mb-5 font-medium">
+            <p className="text-gold uppercase tracking-[0.2em] text-sm mb-5 font-medium">
               Simple Process
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
               How It Works
             </h2>
           </div>
@@ -183,11 +227,11 @@ const Index = () => {
               { step: "03", title: "Secure Delivery", desc: "Receive your piece with white-glove service" },
             ].map((item, index) => (
               <div key={index} className="relative text-center">
-                <span className="font-display text-8xl font-semibold text-muted/50 absolute top-0 left-1/2 -translate-x-1/2">
+                <span className="font-display text-8xl font-bold text-gold/10 absolute top-0 left-1/2 -translate-x-1/2">
                   {item.step}
                 </span>
                 <div className="relative pt-20">
-                  <h3 className="font-display text-xl text-foreground mb-3 tracking-wide">
+                  <h3 className="font-display text-xl text-foreground mb-3">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground">{item.desc}</p>
@@ -199,17 +243,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-28 bg-charcoal">
-        <div className="container mx-auto px-6 text-center">
-          <Award className="w-12 h-12 text-cream/30 mx-auto mb-10" />
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-cream mb-6">
+      <section className="py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5" />
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <Award className="w-14 h-14 text-gold mx-auto mb-10" />
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             Ready to Acquire Your Dream Item?
           </h2>
-          <p className="text-cream/60 max-w-xl mx-auto mb-12 leading-relaxed">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed">
             Submit your request today and let our team of experts find the 
             perfect luxury piece for you.
           </p>
-          <Button variant="hero" className="bg-cream text-charcoal hover:bg-cream/90" asChild>
+          <Button variant="hero" asChild>
             <Link to="/contact">Start Your Journey</Link>
           </Button>
         </div>

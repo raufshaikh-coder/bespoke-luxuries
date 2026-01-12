@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, Target, Eye, Award } from "lucide-react";
+import watchesImage from "@/assets/watches-showcase.jpg";
 
 const values = [
   {
@@ -34,11 +35,11 @@ const About = () => {
       <section className="pt-32 pb-24">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-primary uppercase tracking-[0.3em] text-sm mb-8 font-medium">
+            <p className="text-gold uppercase tracking-[0.3em] text-sm mb-8 font-medium">
               About Us
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-semibold text-foreground mb-10 leading-tight">
-              The Art of <span className="text-primary">Luxury</span> Procurement
+            <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-10 leading-tight">
+              The Art of <span className="text-gradient-gold">Luxury</span> Procurement
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               For over 15 years, Luxe Concierge has been the trusted partner for 
@@ -48,12 +49,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-24 bg-card border-y border-border">
+      {/* Story with Image */}
+      <section className="py-24 bg-charcoal border-y border-border">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-8 accent-underline inline-block pb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8 gold-underline inline-block pb-4">
                 Our Story
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -75,10 +76,16 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="luxury-card p-12 text-center">
-              <p className="font-display text-7xl font-semibold text-primary mb-4">15+</p>
-              <p className="text-foreground text-xl mb-2 font-display">Years of Excellence</p>
-              <p className="text-muted-foreground">Serving discerning clients worldwide</p>
+            <div className="relative">
+              <img 
+                src={watchesImage} 
+                alt="Luxury watches showcase" 
+                className="w-full h-96 object-cover rounded-sm"
+              />
+              <div className="absolute -bottom-8 -left-8 bg-background p-8 border border-border">
+                <p className="font-display text-5xl font-bold text-gradient-gold mb-2">15+</p>
+                <p className="text-foreground text-lg">Years of Excellence</p>
+              </div>
             </div>
           </div>
         </div>
@@ -88,10 +95,10 @@ const About = () => {
       <section className="py-28">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <p className="text-primary uppercase tracking-[0.2em] text-sm mb-5 font-medium">
+            <p className="text-gold uppercase tracking-[0.2em] text-sm mb-5 font-medium">
               Our Principles
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
               Core Values
             </h2>
           </div>
@@ -99,10 +106,10 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="luxury-card p-10 text-center">
-                <div className="w-12 h-12 mx-auto mb-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <value.icon className="w-5 h-5 text-primary" />
+                <div className="w-14 h-14 mx-auto mb-8 rounded-full bg-gold/10 flex items-center justify-center">
+                  <value.icon className="w-6 h-6 text-gold" />
                 </div>
-                <h3 className="font-display text-xl text-foreground mb-4 tracking-wide">
+                <h3 className="font-display text-xl text-foreground mb-4">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -115,14 +122,14 @@ const About = () => {
       </section>
 
       {/* Team Quote */}
-      <section className="py-24 bg-charcoal">
+      <section className="py-24 bg-charcoal border-y border-border">
         <div className="container mx-auto px-6 text-center">
           <blockquote className="max-w-3xl mx-auto">
-            <p className="font-display text-2xl md:text-3xl text-cream italic leading-relaxed mb-10">
+            <p className="font-display text-2xl md:text-3xl text-foreground italic leading-relaxed mb-10">
               "Luxury is in each detail. We don't just source products—we curate 
               experiences and fulfill dreams."
             </p>
-            <footer className="text-cream/50 tracking-widest uppercase text-sm">
+            <footer className="text-gold tracking-widest uppercase text-sm">
               — The Luxe Concierge Team
             </footer>
           </blockquote>
