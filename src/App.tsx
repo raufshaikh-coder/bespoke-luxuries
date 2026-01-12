@@ -10,6 +10,7 @@ import HowToOrder from "./pages/HowToOrder";
 import Contact from "./pages/Contact";
 import ReferAndEarn from "./pages/ReferAndEarn";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <WhatsAppButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
